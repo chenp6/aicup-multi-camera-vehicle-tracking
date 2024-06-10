@@ -16,8 +16,6 @@ fast_reid/datasets/AICUP-ReID
 
 # folder
 run/
-gt_dir
-ts_dir
 /eval_test
 datasets/AI_CUP_MCMOT_dataset/train/images/*
 datasets/AI_CUP_MCMOT_dataset/train/labels/*
