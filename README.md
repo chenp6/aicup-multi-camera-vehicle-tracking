@@ -151,7 +151,7 @@ To install the project, follow these steps:
 4. 調整追蹤模型  
 (1) 將訓練完成的ReID模型與YOLO模型放入`\trained_model`資料夾中    
 (2) 將ground truth bbox文字檔案放入`\tracked_result_evaluation\gt_dir`資料夾中   
-(3) 將愈使用追蹤的ReID模型參數設定(.yml)放入`\configs`中  
+(3) 將追蹤使用的ReID模型參數設定(.yml)放入`\configs`中  
 (4) 利用UCMCTrack提供的Estimation tool 建立各鏡頭的相機參數檔案並放入`camera_para_files`中  
     檔案命名方式須符合‵cam_para_<CamID>.txt`  
     [註] 預設檔案為AICUP資料集之八鏡頭的相機參數，若使用其他資料集則根據鏡頭數覆蓋與新增txt
