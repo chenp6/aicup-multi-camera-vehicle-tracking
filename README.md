@@ -19,6 +19,9 @@
 - 使用投影至地面的 Mahalanobis Distance 進行行車路徑計算
 - 減少相機補償所需的計算資源
 
+## Usage 
+提供Colab執行範例於
+
 ## Data Preparation
 
 Download the AI_CUP dataset, the original dataset structure is:
@@ -177,13 +180,11 @@ To install the project, follow these steps:
    b. 追蹤結果之bbox文字檔儲存於`\tracked_result_evaluation\ts_dir`   
    c. 評估結果呈現於終端機畫面中   
 
-## Usage 
-提供Colab執行範例於
 
 ## Acknowledgement
 
 A large part of the codes, ideas and results are borrowed from
-- [AICUP_Baseline_BoT-SORT](https://github.com/ricky-696AICUP_Baseline_BoT-SORT/)
+- [AICUP_Baseline_BoT-SORT](https://github.com/ricky-696/AICUP_Baseline_BoT-SORT/)
 - [BoT-SORT](https://github.com/NirAharon/BoT-SORT)
 - [ByteTrack](https://github.com/ifzhang/ByteTrack)
 - [StrongSORT](https://github.com/dyhBUPT/StrongSORT)
