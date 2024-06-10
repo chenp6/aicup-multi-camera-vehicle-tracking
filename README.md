@@ -149,7 +149,7 @@ To install the project, follow these steps:
 (1) 將訓練完成的ReID模型與YOLO模型放入`\trained_model`資料夾中    
 (2) 將ground truth bbox文字檔案放入`\tracked_result_evaluation\gt_dir`資料夾中   
 (3) 將愈使用追蹤的ReID模型參數設定(.yml)放入`\configs`中  
-(3) 利用UCMCTrack提供的Estimation tool 建立各鏡頭的相機參數檔案並放入`camera_para_files`中  
+(4) 利用UCMCTrack提供的Estimation tool 建立各鏡頭的相機參數檔案並放入`camera_para_files`中  
     檔案命名方式須符合‵cam_para_<CamID>.txt`  
     [註] 預設檔案為AICUP資料集之八鏡頭的相機參數，若使用其他資料集則根據鏡頭數覆蓋與新增txt
    ```bash
@@ -164,15 +164,15 @@ To install the project, follow these steps:
    │   ├── cam_para_7.txt   
    │   │   ...   
    ```
-(4) 參考`track_all_timestamps_example_template.bat`建立追蹤模型執行之bash檔案     
+(5) 參考`track_all_timestamps_example_template.bat`建立追蹤模型執行之bash檔案     
    [註] 提供‵track_all_timestamps_example_train.bat` 與 ‵track_all_timestamps_example_test.bat` 分別為追蹤AICUP賽事資料集訓練與測試dataset的模型執行bash檔案  
-(5) 根據資料集特性調整MMD與ReID的遮罩與閾值參數  
-(6) 執行追蹤模型程式  
+(6) 根據資料集特性調整MMD與ReID的遮罩與閾值參數  
+(7) 執行追蹤模型程式  
    ```bash
    cd <BoT-SORT_dir 剛剛clone的資料夾path>   
    <追蹤模型執行之bash檔案路徑>
    ```
-(7) 取得結果  
+(8) 取得結果  
    a. 追蹤結果之畫面儲存於‵\tracked_result`    
    b. 追蹤結果之bbox文字檔儲存於‵\tracked_result_evaluation\ts_dir`   
    c. 評估結果呈現於終端機畫面中   
