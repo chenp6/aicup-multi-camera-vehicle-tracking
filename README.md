@@ -166,7 +166,7 @@ To install the project, follow these steps:
 2. 訓練基於ReID的車輛外觀提取模型  
 (1) 準備ReID訓練資料集
    ```bash
-   cd <BoT-SORT_dir 剛剛clone的資料夾path>  
+   cd <aicup-multi-camera-vehicle-tracking> 
    rem For AICUP  
    python fast_reid/datasets/generate_AICUP_patches.py --data_path datasets/AI_CUP_MCMOT_dataset/train  
 
@@ -178,7 +178,7 @@ To install the project, follow these steps:
 
 (3) 訓練ReID模型  
    ```bash 
-   cd <BoT-SORT_dir 剛剛clone的資料夾path>   
+   cd <aicup-multi-camera-vehicle-tracking>   
    python fast_reid/tools/train_net.py --config-file fast_reid/configs/AICUP/<參數配置檔名稱> MODEL.DEVICE "cuda:0"   
    ```
 
@@ -254,7 +254,7 @@ To install the project, follow these steps:
 
 (7) 執行追蹤模型程式  
    ```bash
-   cd <BoT-SORT_dir 剛剛clone的資料夾path>   
+   cd <aicup-multi-camera-vehicle-tracking> 
    <追蹤模型執行之bat檔案路徑>
    ```
 (8) 取得結果  
