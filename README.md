@@ -111,18 +111,59 @@ class|center_x|center_y|width   |height|track_ID|
 0 0.780208 0.273148 0.023958 0.062962 5
 0 0.780989 0.246296 0.022395 0.066666 6
 ```
+## Environment Installation
+- Python3.8 
+- torch 1.11.0+cu113 and torchvision==0.12.0 
+- install MSVC v143 - VS 2022 C++ x64/x86 build tools
+- setuo with conda environment
+
+### Setup with Conda
+**Step 1.** Create Conda environment and install pytorch.
+```shell
+conda create -n botsort python=3.8
+conda activate botsort
+```
+**Step 2.** Install torch and matched torchvision from [pytorch.org](https://pytorch.org/get-started/locally/).<br>
+The code was tested using torch 1.11.0+cu113 and torchvision==0.12.0 
+
+**Step 3.** Fork this Repository and clone your Repository to your device
+
+**Step 4.** **Install numpy first!!**
+```shell
+pip install numpy
+```
+
+**Step 5.** Install `requirements.txt`
+```shell
+pip install -r requirements.txt
+```
+
+**Step 6.** Install [pycocotools](https://github.com/cocodataset/cocoapi).
+```shell
+pip install cython; pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+```
+
+**Step 7.** Others
+```shell
+# Cython-bbox
+pip install cython_bbox
+
+# faiss cpu / gpu
+pip install faiss-cpu
+pip install faiss-gpu
+```
 
 
 
-
-## Installation
+## Training Installation
 The code was tested on Windows10
 To install the project, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/chenp6/aicup-multi-camera-vehicle-tracking.git  
-2. Train 基於ReID的車輛外觀提取模型  
+   git clone https://github.com/chenp6/aicup-multi-camera-vehicle-tracking.git 
+
+2. 訓練基於ReID的車輛外觀提取模型  
 (1) 準備ReID訓練資料集
    ```bash
    cd <BoT-SORT_dir 剛剛clone的資料夾path>  
@@ -169,11 +210,26 @@ To install the project, follow these steps:
    ```
 (5) 參考`track_all_timestamps_example_template.bat`建立追蹤模型執行之bash檔案     
    [註] 提供`track_all_timestamps_example_train.bat`與 `track_all_timestamps_example_test.bat` 分別為追蹤AICUP賽事資料集訓練與測試dataset的模型執行bash檔案  
-(6) 根據資料集特性調整MMD與ReID的遮罩與閾值參數  
+(6) 根據資料集特性調整MMD與ReID的遮罩與閾值參數 (撰寫於bat中) 
+``` bash
+    python tools/mc_demo_yolov7.py ^
+        --weights pretrained/%YOLO_MODEL% ^
+        --source "datasets/AI_CUP_MCMOT_dataset/test/images/%%s" ^
+        --device "0" --name "%%s" ^
+        --fuse-score --agnostic-nms ^
+        --with-reid --fast-reid-config "configs/VehicleID_with_data_augmentation.yml" ^
+        --fast-reid-weights "%REID_WEIGHT_DIR%" ^
+        --MMD_max <MMD正規化最大值之原始數值> ^
+        --MMD_mask  <MMD遮罩(用來遮ReID，較為寬鬆)> ^
+        --MMD_thresh <MMD閾值(較為嚴格)> ^
+        --ReID_mask <ReID遮罩(用來遮MMD，較為寬鬆)> ^
+        --ReID_thresh <ReID閾值(較為嚴格)>
+```  
+
 (7) 執行追蹤模型程式  
    ```bash
    cd <BoT-SORT_dir 剛剛clone的資料夾path>   
-   <追蹤模型執行之bash檔案路徑>
+   <追蹤模型執行之bat檔案路徑>
    ```
 (8) 取得結果  
    a. 追蹤結果之畫面儲存於`\tracked_result`  
