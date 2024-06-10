@@ -11,7 +11,7 @@ for %%s in (%SOURCE_DIR_NAMES%) do (
         --source "<跨鏡頭車輛追蹤dataset_path>/images/%%s" ^
         --device "0" --name "%%s" ^
         --fuse-score --agnostic-nms ^
-        --with-reid --fast-reid-config "configs/<ReID模型參數設定yml檔>" ^
+        --with-reid --fast-reid-config "fast_reid/configs/AICUP/<ReID模型參數設定yml檔>" ^
         --fast-reid-weights "%REID_WEIGHT_DIR%" ^
         --MMD_max 3000 ^
         --MMD_mask 0.7 ^

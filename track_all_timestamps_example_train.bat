@@ -11,7 +11,7 @@ for %%s in (%SOURCE_DIR_NAMES%) do (
         --source "datasets/AI_CUP_MCMOT_dataset/train/images/%%s" ^
         --device "0" --name "%%s" ^
         --fuse-score --agnostic-nms ^
-        --with-reid --fast-reid-config "configs/VehicleID_with_data_augmentation.yml" ^
+        --with-reid --fast-reid-config "fast_reid/configs/AICUP/VehicleID_with_data_augmentation.yml" ^
         --fast-reid-weights "%REID_WEIGHT_DIR%" ^
         --MMD_max 3000 ^
         --MMD_mask 0.7 ^
