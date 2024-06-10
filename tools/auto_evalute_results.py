@@ -19,9 +19,8 @@ gt_dir = "tracked_result_evaluation/gt_dir"
 ts_dir = str(eval_dir)
 
 gt_files = list(Path(gt_dir).glob("*.txt"))
-
+print(f"Evaluation dataset is in {ts_dir}")
 if gt_files:
     os.system(f"python tools/evaluate.py --gt_dir {gt_dir} --ts_dir {ts_dir}")
-    print(f"Evaluation dataset is in {ts_dir}")
 else:
     print(f"No ground truth files, skipping evaluation.")
