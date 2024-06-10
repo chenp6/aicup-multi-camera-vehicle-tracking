@@ -29,7 +29,8 @@ generate_video.py
 *.mp4
 
 # models
-
+*.pt
+*.pth
 
 # vscode
 .vscode
