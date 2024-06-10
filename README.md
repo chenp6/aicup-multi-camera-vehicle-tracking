@@ -9,7 +9,8 @@
 - [Introduction](#introduction)
 - [Usage](#usage)
 - [Features](#features)
-- [Installation](#installation)
+- [Environment Installation](#Environment-Installation)
+- [Training Installation](#Training-Installation)
 
 ## Usage 
 提供Colab執行範例於`AI_CUP.ipynb`
