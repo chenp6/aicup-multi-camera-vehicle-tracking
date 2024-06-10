@@ -13,11 +13,11 @@ for %%s in (%SOURCE_DIR_NAMES%) do (
         --fuse-score --agnostic-nms ^
         --with-reid --fast-reid-config "fast_reid/configs/AICUP/<ReID模型參數設定yml檔>" ^
         --fast-reid-weights "%REID_WEIGHT_DIR%" ^
-        --MMD_max 3000 ^
-        --MMD_mask 0.7 ^
-        --MMD_thresh 0.1 ^
-        --ReID_mask 0.3 ^
-        --ReID_thresh 0.25
+        --MMD_max <MMD正規化最大值之原始數值> ^
+        --MMD_mask  <MMD遮罩(用來遮ReID，較為寬鬆)> ^
+        --MMD_thresh <MMD閾值(較為嚴格)> ^
+        --ReID_mask <ReID遮罩(用來遮MMD，較為寬鬆)> ^
+        --ReID_thresh <ReID閾值(較為嚴格)>
 )
 python tools/auto_evalute_results.py
 endlocal
