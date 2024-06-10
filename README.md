@@ -7,10 +7,12 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Usage](#usage)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
 
+## Usage 
+提供Colab執行範例於`AI_CUP.ipynb`
 
 ## Features
 
@@ -18,9 +20,6 @@
 - 自定義外觀和行車路徑遮罩
 - 使用投影至地面的 Mahalanobis Distance 進行行車路徑計算
 - 減少相機補償所需的計算資源
-
-## Usage 
-提供Colab執行範例於
 
 ## Data Preparation
 
