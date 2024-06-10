@@ -173,7 +173,7 @@ To install the project, follow these steps:
    <追蹤模型執行之bash檔案路徑>
    ```
 (7) 取得結果  
-   a. 追蹤結果之畫面儲存於‵\tracked_result`  
+   a. 追蹤結果之畫面儲存於‵\tracked_result`    
    b. 追蹤結果之bbox文字檔儲存於‵\tracked_result_evaluation\ts_dir`   
    c. 評估結果呈現於終端機畫面中   
 
