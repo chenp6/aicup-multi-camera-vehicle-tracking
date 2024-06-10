@@ -112,7 +112,7 @@ class|center_x|center_y|width   |height|track_ID|
 0 0.780989 0.246296 0.022395 0.066666 6
 ```
 ## Environment Installation
-- Python3.8 
+- Python3.7 
 - torch 1.11.0+cu113 and torchvision==0.12.0 
 - install MSVC v143 - VS 2022 C++ x64/x86 build tools
 - setuo with conda environment
@@ -120,7 +120,7 @@ class|center_x|center_y|width   |height|track_ID|
 ### Setup with Conda
 **Step 1.** Create Conda environment and install pytorch.
 ```shell
-conda create -n botsort python=3.8
+conda create -n botsort python=3.7
 conda activate botsort
 ```
 **Step 2.** Install torch and matched torchvision from [pytorch.org](https://pytorch.org/get-started/locally/).<br>
