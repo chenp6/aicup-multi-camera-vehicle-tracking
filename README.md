@@ -187,6 +187,32 @@ To install the project, follow these steps:
 
 
 3. 訓練YOLO模型  
+(1) 準備 YOLOv7 資料集
+   ```bash 
+   cd <aicup-multi-camera-vehicle-tracking>   
+   python yolov7/tools/AICUP_to_YOLOv7.py --AICUP_dir datasets/AI_CUP_MCMOT_dataset/train --YOLOv7_dir datasets/AI_CUP_MCMOT_dataset/yolo 
+   ```
+  執行後即可得到 train/valid/test 訓練資料集
+
+(2) 下載預訓練權重  
+   本次專案採用的預訓練權重為 `yolov7-e6e` 權重，可以從 [yolov7 github](https://github.com/WongKinYiu/yolov7) 下載。
+   將下載之權重放置於 ` \aicup-multi-camera-vehicle-tracking\pretrained` 資料夾底下
+
+(3) 微調模型
+   可以自行調整 batch-size 及 epochs 等超參數設置
+  ```bash
+   cd <aicup-multi-camera-vehicle-tracking>  
+   python yolov7/train_aux.py ^
+      --device 0  ^
+      --batch-size 8  ^
+      --epochs 50  ^
+      --data yolov7/data/AICUP.yaml  ^
+      --img 1280 1280 --cfg yolov7/cfg/training/yolov7-w6-AICUP.yaml  ^
+      --weights 'pretrained/yolov7-e6e.pt'  ^
+      --name yolov7-weight ^
+      --hyp data/hyp.scratch.custom.yaml ^
+   ```
+   微調後的權重和訓練結果可以在 `.\runs\train\yolov7-weight`  下找到
 
 
 4. 調整追蹤模型  
