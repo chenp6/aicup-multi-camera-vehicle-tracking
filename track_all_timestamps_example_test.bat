@@ -19,5 +19,5 @@ for %%s in (%SOURCE_DIR_NAMES%) do (
         --ReID_mask 0.3 ^
         --ReID_thresh 0.25
 )
-python auto_evalute_results.py
+python tools/auto_evalute_results.py
 endlocal
