@@ -165,7 +165,7 @@ To install the project, follow these steps:
    │   │   ...   
    ```
 (5) 參考`track_all_timestamps_example_template.bat`建立追蹤模型執行之bash檔案     
-   [註] 提供‵track_all_timestamps_example_train.bat` 與 ‵track_all_timestamps_example_test.bat` 分別為追蹤AICUP賽事資料集訓練與測試dataset的模型執行bash檔案  
+   [註] 提供`track_all_timestamps_example_train.bat`與 `track_all_timestamps_example_test.bat` 分別為追蹤AICUP賽事資料集訓練與測試dataset的模型執行bash檔案  
 (6) 根據資料集特性調整MMD與ReID的遮罩與閾值參數  
 (7) 執行追蹤模型程式  
    ```bash
